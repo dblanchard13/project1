@@ -147,5 +147,56 @@
   };
   firebase.initializeApp(config);
 
+var database = firebase.database();
 
-   
+var playerName = "";
+var email = "";
+
+$("#add-user").on("click", function(event) {
+
+  // Preventing the webpage from restarting.
+
+  event.preventDefault();
+
+  // The defaults for the following variables will be replaced with info on trains from the HTML form.
+
+  playerName = $("#add-name").val().trim();
+  email = $("#add-email").val().trim();
+
+  var trElement = $("<tr>")
+  var tdName = $("<td>" + playerName + "</td>")
+  var tdEmail = $("<td>" + email + "</td>")
+
+  trElement.append(tdName)
+  trElement.append(tdEmail)
+
+  $("#table-body").append(trElement)
+
+  // Adding info on trains to the database.
+
+  database.ref().push({
+
+    playerName: playerName,
+    email: email
+
+  })
+
+  $("#add-name").val("");
+  $("#add-email").val("");
+
+})
+
+// There needs to be code to add and retrieve a player's score and rating from the database. These values also need to be added to the table.
+
+database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+
+  var sv = snapshot.val();
+
+  console.log(sv.playerName);
+  console.log(sv.email);
+
+}, function(errorObject) {
+
+      console.log("Errors handled: " + errorObject.code);
+      
+});
