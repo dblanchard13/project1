@@ -135,4 +135,17 @@
       $("#line6b").empty();
       console.log(playerAnswer)
       j++;}
+
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBINrSsfJcrqUsg7zC1NhHqLQtW_OXp1r8",
+    authDomain: "quiz-assignment.firebaseapp.com",
+    databaseURL: "https://quiz-assignment.firebaseio.com",
+    projectId: "quiz-assignment",
+    storageBucket: "quiz-assignment.appspot.com",
+    messagingSenderId: "109099748294"
+  };
+  firebase.initializeApp(config);
+
+
    
