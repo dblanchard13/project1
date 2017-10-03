@@ -1,4 +1,114 @@
+//index.html
 
+  var config = {
+    apiKey: "AIzaSyC4rEhm8qm_Bxej5hNuUBsV8c0sTDpeWlY",
+    authDomain: "project01-963de.firebaseapp.com",
+    databaseURL: "https://project01-963de.firebaseio.com",
+    projectId: "project01-963de",
+    storageBucket: "project01-963de.appspot.com",
+    messagingSenderId: "918836521214"
+  };
+  firebase.initializeApp(config);
+
+
+    // ================================================================================
+
+    // Get a reference to the database service
+    var database = firebase.database();
+
+
+
+    // connectionsRef references a specific location in our database.
+    // All of our connections will be stored in this directory.
+    var connectionsRef = database.ref("/connections");
+
+    // '.info/connected' is a special location provided by Firebase that is updated
+    // every time the client's connection state changes.
+    // '.info/connected' is a boolean value, true if the client is connected and false if they are not.
+    var connectedRef = database.ref(".info/connected");
+
+    connectedRef.on("value", function(snap) {
+
+  // If they are connected..
+  if (snap.val()) {
+
+    // Add user to the connections list.
+    var con = connectionsRef.push(true);
+    // Remove user from the connection list when they disconnect.
+    con.onDisconnect().remove();
+  }
+});
+
+// When first loaded or when the connections list changes...
+connectionsRef.on("value", function(snap) {
+
+  // Display the viewer count in the html.
+  // The number of online users is the number of children in the connections list.
+  $("#connected-admins").html(snap.numChildren());
+});
+
+    //  Button for adding Trains
+$("#submitid").on("click", function(event) {
+  event.preventDefault();
+
+  var newName = $("#user-name").val().trim();
+  var newEmail = $("#email").val().trim();
+  
+  
+
+  
+
+
+ // Creates local "temporary" object for holding trains data
+  var newuser = {
+    newName: newName,
+    newEmail: newEmail ,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  };
+
+  // Uploads trains data to the database
+  database.ref('/user').push(newuser);
+
+  
+
+   // Clears all of the text-boxes
+  $("#user-name").val("");
+  $("#email").val("");
+
+})
+
+// Create Firebase event for adding train to the database and a row in the html when a user adds an entry
+database.ref('/user').on("child_added", function(childSnapshot) {
+
+  // Store everything into a variable.
+  var userName = childSnapshot.val().newName;
+  var useremail= childSnapshot.val().newEmail;
+ 
+ $("#user-table> tbody").append("<tr><td>" + userName + "</td><td>"+ useremail +"</td></tr>");
+  }, function(errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//index.html
+//----Geoindex---
 (function() {
     var cx = '012033538369567141577:jswhd2vhhfe';
     var gcse = document.createElement('script');
@@ -9,7 +119,7 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 
-//----Geoindex---
+
  window.onload = function() {
     
 	$("#line1").html('<button type="button" id="startbutton" class="btn btn-success btn-block">Start</button>')
