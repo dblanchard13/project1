@@ -110,17 +110,17 @@
      clearLines()
      nextCodeQuestion() 
    }
-   function check2(){
+   function check2b(){
      useranswer.push(choice1b[j])
      clearLines()
      nextCodeQuestion() 
    }
-   function check3(){
+   function check3b(){
      useranswer.push(choice1b[j])
      clearLines()
      nextCodeQuestion() 
    }
-   function check4(){
+   function check4b(){
      useranswer.push(choice1b[j])
      clearLines()
      nextCodeQuestion() 

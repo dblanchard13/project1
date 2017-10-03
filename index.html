@@ -26,6 +26,7 @@
     <link href="css/freelancer.min.css" rel="stylesheet">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
@@ -100,53 +101,55 @@
     </section>
 
     <!-- Table for user registration -->
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-          <h5 class="panel-title">Player Hall of Fame</h5>
-        </div>
-        <div class="panel-body">
-          
-          <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Score</th>
-                  <th>Rating</th>
-                </tr>
-              </thead>
-              <tbody id="table-body">
-                <tr>
-                  <td>A Name</td>
-                  <td>An Email</td>
-                  <td>0</td>
-                  <td>A Rating</td>
-                </tr>
-
-              </tbody>
-          </table>
-
-        </div>
-      </div>
-
+    
+    <div class="container">
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <h5 class="panel-title">Sign Up Here!</h5>
-        </div>
-        <div class="panel-body">
+          <div class="panel-heading">
+            <h5 class="panel-title">Player Hall of Fame</h5>
+          </div>
+          <div class="panel-body">
+            
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Score</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+                  <tr>
+                    <td>A Name</td>
+                    <td>An Email</td>
+                    <td>0</td>
+                    <td>A Rating</td>
+                  </tr>
 
-          <form role="form">
-                <div class="form-group">
-                  <label for="name-input">Name:</label>
-                  <input class="form-control" id="add-name" type="text">
-                </div>
-                <div class="form-group">
-                  <label for="role-input">Email:</label>
-                  <input class="form-control" id="add-email" type="email">
-                </div>
-                <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-              </form>
+                </tbody>
+            </table>
+
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h5 class="panel-title">Sign Up Here!</h5>
+          </div>
+          <div class="panel-body">
+
+            <form role="form">
+                  <div class="form-group">
+                    <label for="name-input">Name:</label>
+                    <input class="form-control" id="add-name" type="text">
+                  </div>
+                  <div class="form-group">
+                    <label for="role-input">Email:</label>
+                    <input class="form-control" id="add-email" type="email">
+                  </div>
+                  <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+                </form>
+    </div>
 
         </div>
       </div>
