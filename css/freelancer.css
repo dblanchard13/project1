@@ -181,3 +181,7 @@ header.masthead {
 .btn:active,
 .btn:focus {
   outline: none; }
+
+.container {
+  margin: 10px;
+}
