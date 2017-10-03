@@ -158,21 +158,21 @@ $("#add-user").on("click", function(event) {
 
   event.preventDefault();
 
-  // The defaults for the following variables will be replaced with info on trains from the HTML form.
+  // The defaults for the following variables will be replaced with info on users from the HTML form.
 
   playerName = $("#add-name").val().trim();
   email = $("#add-email").val().trim();
 
-  var trElement = $("<tr>")
-  var tdName = $("<td>" + playerName + "</td>")
-  var tdEmail = $("<td>" + email + "</td>")
+  // var trElement = $("<tr>")
+  // var tdName = $("<td>" + playerName + "</td>")
+  // var tdEmail = $("<td>" + email + "</td>")
 
-  trElement.append(tdName)
-  trElement.append(tdEmail)
+  // trElement.append(tdName)
+  // trElement.append(tdEmail)
 
-  $("#table-body").append(trElement)
+  // $("#table-body").append(trElement)
 
-  // Adding info on trains to the database.
+  // Adding info on users to the database.
 
   database.ref().push({
 
@@ -194,6 +194,15 @@ database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", functi
 
   console.log(sv.playerName);
   console.log(sv.email);
+
+  var trElement = $("<tr>")
+  var tdName = $("<td>" + playerName + "</td>")
+  var tdEmail = $("<td>" + email + "</td>")
+
+  trElement.append(tdName)
+  trElement.append(tdEmail)
+
+  $("#table-body").append(trElement)
 
 }, function(errorObject) {
 
