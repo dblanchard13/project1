@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+   <title>BASIC CODING GAME</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!--important-->
@@ -18,19 +18,26 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-     <!-- Firebase Reference -->
-   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+     <!-- Firebase Reference -->
+   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+   <!--Google map-->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiqbgMsCC0ToX22tJHN5lY7ydD3FjMAT8&callback=initMap"></script>
+
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <link href="css/freelancer.css" rel="stylesheet">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -74,17 +81,29 @@
     </header>
 
   <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <section id="portfolio" >
       <div class="container">
-        <div id="question1"></div>
-        <div id="question2"></div>
-        <div id="question3"></div>
-        <div id="question4"></div>
-        <div id="question5"></div>
+        <div id="line6"></div>
+         <div class="row">
+          <div class="col-sm-6 ">
+            <div id="line7"></div>
+          </div>
+
+          <div class="col-sm-6 ">
+            <div id="line8"></div>
+          </div></div><br>  
+         <div class="row"> 
+          <div class="col-sm-6 ">
+            <div id="line9"></div>
+          </div> 
+          <div class="col-sm-6 "> 
+            <div id="line10"></div>
+          </div></div>
       </div>
+
     </section>
-      </div>
-    </section>
+    <div id="googlesearch"><gcse:search></gcse:search></div>
+
     <!-- About Section -->
     <section class="success" id="about">
       <div class="container">
@@ -105,8 +124,9 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    
+    <!-- location Section -->
+
+    <div id="map"></div>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -115,7 +135,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              Copyright &copy; Your Website 2017
+              Address: 160 spear St., San Francisco, CA 94102, USA.
             </div>
           </div>
         </div>
