@@ -21,10 +21,15 @@
 
     <!-- Firebase Reference -->
    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    
+    <!--Google map-->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiqbgMsCC0ToX22tJHN5lY7ydD3FjMAT8&callback=initMap"></script>
 
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/freelancer.css" rel="stylesheet">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -45,6 +50,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="friendsinfo.html">Friends Info</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Games</a>
             </li>
             <li class="nav-item">
@@ -63,7 +71,7 @@
       <div class="container">
         <img class="img-fluid" src="img/profile.png" alt="">
         <div class="intro-text">
-          <span class="name">ADVENTURE GAME</span>
+          <span class="name">GAMEs</span>
          
         </div>
       </div>
@@ -72,7 +80,7 @@
   <!-- Portfolio Grid Section -->
     <section id="portfolio">
       <div class="container">
-        <h2 class="text-center">CHOOSE YOUR ADVENTURE</h2>
+        <h2 class="text-center">CHOOSE YOUR GAME</h2></br>
         <div class="row">
           <div class="col-sm-6 portfolio-item">
             <a class="portfolio-link"  data-toggle="modal" href="geoindex.html">
@@ -100,55 +108,8 @@
       </div>
     </section>
 
-    <div class="container">
-
-
     <!-- USER tables-->
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong>USER INFO</strong></h3>
-            </div>
-            <div class="panel-body">
-              <table class="table table-hover" id='user-table'>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
- 
-
-    <!-- Add trains-->
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">ADD NAME</h3>
-          </div>
-          <div class="panel-body">
-            <form>
-              <div class="form-group">
-                <label for="train-name">Name</label>
-                <input class="form-control" id="user-name" type="text">
-              </div>
-              <div class="form-group">
-                <label for="destination">EMAIL</label>
-                <input class="form-control" id="email" type="text">
-              </div>
-              <button class="btn btn-primary" id="submitid" type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </br>
+    <div class="container" >
   </div>
     <!-- About Section -->
     <section class="success" id="about">
@@ -170,8 +131,11 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- location Section -->
+
+    <div id="map"></div>
     
+   
 
     <!-- Footer -->
     <footer class="text-center">
@@ -180,7 +144,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              Copyright &copy; Your Website 2017
+              Address: 160 spear St., San Francisco, CA 94102, USA. 
             </div>
           </div>
         </div>

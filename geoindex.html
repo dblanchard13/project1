@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>GEO GAME</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!--important-->
@@ -27,6 +27,10 @@
 
      <!-- Firebase Reference -->
    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+   <!--Google map-->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiqbgMsCC0ToX22tJHN5lY7ydD3FjMAT8&callback=initMap"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -97,7 +101,7 @@
       </div>
 
     </section>
-    <div id="googlesearch"><gcse:search></gcse:search></div>
+   <div id="googlesearch" ><gcse:search></gcse:search></div>
 
     <!-- About Section -->
     <section class="success" id="about">
@@ -119,8 +123,9 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    
+     <!-- location Section -->
+
+    <div id="map"></div>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -129,7 +134,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              Copyright &copy; Your Website 2017
+              Address: 160 spear St., San Francisco, CA 94102, USA.
             </div>
           </div>
         </div>

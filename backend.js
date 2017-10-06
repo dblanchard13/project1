@@ -1,4 +1,17 @@
 //index.html
+      function initMap() {
+        var uluru = {lat: 37.7912976, lng: -122.3937426};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+
+   
 
   var config = {
     apiKey: "AIzaSyC4rEhm8qm_Bxej5hNuUBsV8c0sTDpeWlY",
@@ -110,44 +123,52 @@ database.ref('/user').on("child_added", function(childSnapshot) {
 //index.html
 //----Geoindex---
 (function() {
-    var cx = '012033538369567141577:jswhd2vhhfe';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+  var cx = '012033538369567141577:jswhd2vhhfe';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s); })();
 
 
  window.onload = function() {
     
-	$("#line1").html('<button type="button" id="startbutton" class="btn btn-success btn-block">Start</button>')
-    $("#startbutton").click(startgame);
+	$("#line1").html('<button type="button" id="startbutton1" class="btn btn-success btn-block">Start</button>')
+    $("#startbutton1").click(startgame1);
+
+
+  $("#line6").html('<button type="button" id="startbutton2" class="btn btn-success btn-block">Start</button>')
+    $("#startbutton2").click(startgame2);
   };
 
-  function startgame(){
-    $("#line1").empty();	
-    nextquestion();
-  };
 
+     function startgame1(){
+      $("#line1").empty();	
+      nextquestion1();
+      };
+     function startgame2(){
+       $("#line6").empty();  
+      nextquestion2();}
   
-  var question=["You are in a Country that's dark all day for 60 days straight. what country are you in?"
+  var question1=["You are in a Country that's dark all day for 60 days straight. what country are you in?"
   ,"If you were to drive 680 miles south and 400 miles west from this latitude 60.192059, and longitude 24.945831. what country would you be in?"
   ,"If you guessed correctly the pervious queston then this question so be easy hahahahaha. What is the number one landmark in this country?"
   ,"This landmark has a envelope with directions that will land you in a country that has the Petronas twin towers. what country is this?"
-  ,"who was the president of Uganda in 1972?"]
+  ,"Who was the president of Uganda in 1972?"]
    var choice1=["Denmark","Denmark","Gendarmenmarkt","Dubai","Richard Nixon"]
    var choice2=[" Iceland","Poland","Jewish Ghetto Memorial","China","Yoweri Museveni"]
    var choice3=["Russia","Germany","Cumil","Malaysia","Idi Amin"]
    var choice4=["Finland","Slovakia","Roskilde Cathedra","Phillipines","Milton Obote"]
-   var answer=["Finland","Germany","Gendarmaenmarkt","Malaysia","Idi Amin"]
+   var answer1=["Finland","Germany","Gendarmenmarkt","Malaysia","Idi Amin"]
    var i=0;
-   var useranswer=[]
+   var useranswer1=[]
+   var correct1=0;
 
-   function nextquestion(){ 
+   function nextquestion1(){ 
+    console.log(i)
     $("#line1").addClass("text-center")
-    $("#line1").html(question[i]);
+    $("#line1").html(question1[i]);
     $("#line2").html('<button type="button" id="choice1" class="btn btn-success btn-lg btn-block">'+choice1[i])+'</button>';
     $("#line3").html('<button type="button" id="choice2" class="btn btn-success btn-lg btn-block">'+choice2[i])+'</button>';
     $("#line4").html('<button type="button" id="choice3" class="btn btn-success btn-lg btn-block">'+choice3[i])+'</button>';
@@ -156,46 +177,144 @@ database.ref('/user').on("child_added", function(childSnapshot) {
     $("#choice2").click(check2);
     $("#choice3").click(check3);
     $("#choice4").click(check4);
-     if(i==question.length){     //end page
+     if(i==question1.length){     //end page
      
       $("#line1").html("-GAME END!-");
-      $("#line2").html("Correct: ");
-      $("#line3").html("Incorrect: ");
+      $("#line2").html(correct1);
+      $("#line3").empty()
       $("#line4").empty();
       $("#line5").empty();
     }};
 
    function check1(){
-     useranswer.push(choice1[i])
-     clear()
-     nextquestion() 
+     useranswer1.push(choice1[i])
+     console.log(useranswer1)
+     console.log(answer1)
+     checkanswer1()
+     clear1()
+     nextquestion1() 
    }
    function check2(){
-     useranswer.push(choice1[i])
-     clear()
-     nextquestion() 
+     useranswer1.push(choice2[i])
+     checkanswer1()
+     clear1()
+     nextquestion1() 
    }
    function check3(){
-     useranswer.push(choice1[i])
-     clear()
-     nextquestion() 
+     useranswer1.push(choice3[i])
+     checkanswer1()
+     clear1()
+     nextquestion1() 
    }
    function check4(){
-     useranswer.push(choice1[i])
-     clear()
-     nextquestion() 
+     useranswer1.push(choice4[i])
+     checkanswer1()
+     clear1()
+     nextquestion1() 
    }
 
-   function clear(){
+   function clear1(){
       
       $("#line1").empty();
       $("#line2").empty();
       $("#line3").empty();
       $("#line4").empty();
       $("#line5").empty();
-      console.log(useranswer)
+      console.log(useranswer1)
       i++;
     }
+
+    function checkanswer1(){
+    if(answer1[i]===useranswer1[i]){
+      correct1++;
+      console.log(correct1)
+      }}
 //--geoindex.html
+//--codingindex.html
+
+
+
+  var question2=["Which keyword is used to indicate a variable?"
+    , "What is the '='(equal sign) called in JavaScript?"
+    , "In JavaScript which comparison operator tests wheater the left and right values are identical to one another?"
+    , "In JavaScript which method take a string and converts all the characters to lower case?"
+    , "In JavaScript which property do you find the length of an array?"]
+   var choice5=["variable", "is equivalent", "===", "ToLowerCase()", "length ()"]
+   var choice6=["var", "equal to", "!==", "To LowerCase()", ".length()"]
+   var choice7=["vrb", "assignment operator", ">=", "To LowerCase()", ".length"]
+   var choice8=["int", "answer", "=", "toLowerCase()", "length."]
+   var answer2=["Finland","Germany","Gendarmenmarkt","Malaysia","Idi Amin"]
+   var j=0;
+   var useranswer2=["var","equal to","===","toLowerCase()",".length"]
+   var correct2=0;
+
+   function nextquestion2(){ 
+    console.log(j)
+    $("#line6").addClass("text-center")
+    $("#line6").html(question2[j]);
+    $("#line7").html('<button type="button" id="choice5" class="btn btn-success btn-lg btn-block">'+choice5[j])+'</button>';
+    $("#line8").html('<button type="button" id="choice6" class="btn btn-success btn-lg btn-block">'+choice6[j])+'</button>';
+    $("#line9").html('<button type="button" id="choice7" class="btn btn-success btn-lg btn-block">'+choice7[j])+'</button>';
+    $("#line10").html('<button type="button" id="choice8" class="btn btn-success btn-lg btn-block">'+choice8[j])+'</button>';
+    $("#choice5").click(check5);
+    $("#choice6").click(check6);
+    $("#choice7").click(check7);
+    $("#choice8").click(check8);
+     if(j==question2.length){     //end page
+      $("#line6").html("-GAME END!-");
+      $("#line7").html(correct2);
+      $("#line8").empty()
+      $("#line9").empty();
+      $("#line10").empty();
+    }};
+
+
+   function check5(){
+     useranswer2.push(choice5[j])
+     console.log(useranswer2)
+     console.log(answer2)
+     checkanswer2()
+     clear2()
+     nextquestion2() 
+   }
+   function check6(){
+     useranswer2.push(choice6[j])
+     checkanswer2()
+     clear2()
+     nextquestion2() 
+   }
+   function check7(){
+     useranswer2.push(choice7[j])
+     checkanswer2()
+     clear2()
+     nextquestion2() 
+   }
+   function check8(){
+     useranswer2.push(choice8[j])
+     checkanswer2()
+     clear2()
+     nextquestion2() 
+   }
+
+   function clear2(){
+      
+      $("#line6").empty();
+      $("#line7").empty();
+      $("#line8").empty();
+      $("#line9").empty();
+      $("#line10").empty();
+      console.log(useranswer2)
+      j++;
+    }
+
+    function checkanswer2(){
+    if(answer2[j]===useranswer2[j]){
+      correct2++;
+      console.log(correct2)
+      }}
+
+
+
+//--codiingindex.html
 
    
