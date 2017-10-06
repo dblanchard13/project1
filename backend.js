@@ -166,7 +166,7 @@ database.ref('/user').on("child_added", function(childSnapshot) {
    var correct1=0;
 
    function nextquestion1(){ 
-    console.log(i)
+   
     $("#line1").addClass("text-center")
     $("#line1").html(question1[i]);
     $("#line2").html('<button type="button" id="choice1" class="btn btn-success btn-lg btn-block">'+choice1[i])+'</button>';
@@ -180,7 +180,9 @@ database.ref('/user').on("child_added", function(childSnapshot) {
      if(i==question1.length){     //end page
      
       $("#line1").html("-GAME END!-");
-      $("#line2").html(correct1);
+      $("#lineend1").addClass("end")
+      $("#lineend1").html("SCORE: "+correct1+"/"+question1.length);
+      $("#line2").empty()
       $("#line3").empty()
       $("#line4").empty();
       $("#line5").empty();
@@ -188,8 +190,7 @@ database.ref('/user').on("child_added", function(childSnapshot) {
 
    function check1(){
      useranswer1.push(choice1[i])
-     console.log(useranswer1)
-     console.log(answer1)
+    
      checkanswer1()
      clear1()
      nextquestion1() 
@@ -220,14 +221,13 @@ database.ref('/user').on("child_added", function(childSnapshot) {
       $("#line3").empty();
       $("#line4").empty();
       $("#line5").empty();
-      console.log(useranswer1)
       i++;
     }
 
     function checkanswer1(){
     if(answer1[i]===useranswer1[i]){
       correct1++;
-      console.log(correct1)
+      
       }}
 //--geoindex.html
 //--codingindex.html
@@ -239,17 +239,17 @@ database.ref('/user').on("child_added", function(childSnapshot) {
     , "In JavaScript which comparison operator tests wheater the left and right values are identical to one another?"
     , "In JavaScript which method take a string and converts all the characters to lower case?"
     , "In JavaScript which property do you find the length of an array?"]
-   var choice5=["variable", "is equivalent", "===", "ToLowerCase()", "length ()"]
-   var choice6=["var", "equal to", "!==", "To LowerCase()", ".length()"]
-   var choice7=["vrb", "assignment operator", ">=", "To LowerCase()", ".length"]
-   var choice8=["int", "answer", "=", "toLowerCase()", "length."]
-   var answer2=["Finland","Germany","Gendarmenmarkt","Malaysia","Idi Amin"]
+   var choice5=["variable","is equivalent","===","ToLowerCase()","length ()"]
+   var choice6=["var","equal to","!==","To LowerCase()",".length()"]
+   var choice7=["vrb","assignment operator",">=","To LowerCase()",".length"]
+   var choice8=["int","answer","=","toLowerCase()","length."]
+   var answer2=["var","equal to","===","toLowerCase()",".length"]
    var j=0;
-   var useranswer2=["var","equal to","===","toLowerCase()",".length"]
+   var useranswer2=[]
    var correct2=0;
 
    function nextquestion2(){ 
-    console.log(j)
+    
     $("#line6").addClass("text-center")
     $("#line6").html(question2[j]);
     $("#line7").html('<button type="button" id="choice5" class="btn btn-success btn-lg btn-block">'+choice5[j])+'</button>';
@@ -262,7 +262,9 @@ database.ref('/user').on("child_added", function(childSnapshot) {
     $("#choice8").click(check8);
      if(j==question2.length){     //end page
       $("#line6").html("-GAME END!-");
-      $("#line7").html(correct2);
+      $("#lineend2").addClass("end");
+      $("#lineend2").html("SCORE: "+correct2+"/"+question2.length);
+      $("#line7").empty()
       $("#line8").empty()
       $("#line9").empty();
       $("#line10").empty();
@@ -271,8 +273,6 @@ database.ref('/user').on("child_added", function(childSnapshot) {
 
    function check5(){
      useranswer2.push(choice5[j])
-     console.log(useranswer2)
-     console.log(answer2)
      checkanswer2()
      clear2()
      nextquestion2() 
@@ -303,14 +303,12 @@ database.ref('/user').on("child_added", function(childSnapshot) {
       $("#line8").empty();
       $("#line9").empty();
       $("#line10").empty();
-      console.log(useranswer2)
       j++;
     }
 
     function checkanswer2(){
     if(answer2[j]===useranswer2[j]){
       correct2++;
-      console.log(correct2)
       }}
 
 
