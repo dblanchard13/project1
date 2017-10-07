@@ -165,6 +165,7 @@ database.ref('/user').on("child_added", function(childSnapshot) {
    var useranswer1=[]
    var correct1=0;
 
+
    function nextquestion1(){ 
    
     $("#line1").addClass("text-center")
@@ -180,8 +181,10 @@ database.ref('/user').on("child_added", function(childSnapshot) {
      if(i==question1.length){     //end page
      
       $("#line1").html("-GAME END!-");
-      $("#lineend1").addClass("end")
+      $("#lineend1").addClass("end1")
       $("#lineend1").html("SCORE: "+correct1+"/"+question1.length);
+      $("#lineend2").addClass("end2")
+      $("#lineend2").html('<a href="answer1.html">CHECK ANSWER</a>')
       $("#line2").empty()
       $("#line3").empty()
       $("#line4").empty();
@@ -262,8 +265,10 @@ database.ref('/user').on("child_added", function(childSnapshot) {
     $("#choice8").click(check8);
      if(j==question2.length){     //end page
       $("#line6").html("-GAME END!-");
-      $("#lineend2").addClass("end");
-      $("#lineend2").html("SCORE: "+correct2+"/"+question2.length);
+      $("#lineend3").addClass("end1");
+      $("#lineend3").html("SCORE: "+correct2+"/"+question2.length);
+      $("#lineend4").addClass("end2");
+      $("#lineend4").html('<a href="answer2.html">CHECK ANSWER</a>')
       $("#line7").empty()
       $("#line8").empty()
       $("#line9").empty();
