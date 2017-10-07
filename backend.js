@@ -123,13 +123,13 @@ database.ref('/user').on("child_added", function(childSnapshot) {
 //index.html
 //----Geoindex---
 (function() {
-  var cx = '012033538369567141577:jswhd2vhhfe';
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s); })();
+    var cx = '012033538369567141577:jswhd2vhhfe';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s); })();
 
 
  window.onload = function() {
