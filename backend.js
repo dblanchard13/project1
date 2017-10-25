@@ -150,7 +150,11 @@ database.ref('/user').on("child_added", function(childSnapshot) {
      function startgame2(){
        $("#line6").empty();  
       nextquestion2();}
-  
+  // It's a good practice to try and have the data modelled in a way that it makes it clear what it's being used
+  // for and what are the critical pieces of it. One way you could do this here would be to combine your questions
+  // and choices into an object that had additional metadata about the question/answers such as the correct answer
+  // and then you could have an array of those objects that would make cycling through questions considerably
+  // easier and that would lend itself well towards DRY-ing up a good chunk of this code.
   var question1=["You are in a Country that's dark all day for 60 days straight. what country are you in?"
   ,"If you were to drive 680 miles south and 400 miles west from this latitude 60.192059, and longitude 24.945831. what country would you be in?"
   ,"If you guessed correctly the pervious queston then this question so be easy hahahahaha. What is the number one landmark in this country?"
@@ -166,8 +170,9 @@ database.ref('/user').on("child_added", function(childSnapshot) {
    var correct1=0;
 
 
+   // This 
    function nextquestion1(){ 
-   
+
     $("#line1").addClass("text-center")
     $("#line1").html(question1[i]);
     $("#line2").html('<button type="button" id="choice1" class="btn btn-success btn-lg btn-block">'+choice1[i])+'</button>';
@@ -191,6 +196,9 @@ database.ref('/user').on("child_added", function(childSnapshot) {
       $("#line5").empty();
     }};
 
+    // Would be good to make these functions a bit more dynamic as opposed to
+    // making a new function for each answer choice. Looks like there are a few instances 
+    // of this throughout your code.
    function check1(){
      useranswer1.push(choice1[i])
     
